@@ -1,3 +1,4 @@
+
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Logo from '../assets/images/logo_light.png';
 import { Link } from 'expo-router';
