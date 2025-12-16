@@ -1,49 +1,50 @@
-
-import { StyleSheet, Text, View, Image } from 'react-native';
-import Logo from '../assets/images/logo_light.png';
+import { StyleSheet, View, Text } from 'react-native';
 import { Link } from 'expo-router';
+import ThemedView from '../components/ThemedView';
+import ThemedText from '../components/ThemedText';
 
-const index = () => {
+const Home = () => {
   return (
-    <View style={styles.container}>
-      <Image
-        source={Logo}
-        style={{ width: 100, height: 100, marginVertical: 20 }}
-        resizeMode="contain"
-      />
-      <Text style={styles.heading}>Hello world</Text>
-      <Text style={{ color: 'blue', margin: 30 }}>Reading List App</Text>
-      <Link href="/about" style={styles.link}>
-        Navigate to About page
+    <ThemedView style={styles.container}>
+      <ThemedText style={styles.title}>Welcome to Shelfie App</ThemedText>
+      <ThemedText style={styles.subtitle}>The Number 1 Reading List App</ThemedText>
+
+      <Link href="/login" style={styles.link}>
+        <ThemedText>Login</ThemedText>
       </Link>
-    </View>
+
+      <Link href="/register" style={styles.link}>
+        <ThemedText>Register</ThemedText>
+      </Link>
+
+      <Link href="/profile" style={styles.link}>
+        <ThemedText>Profile</ThemedText>
+      </Link>
+    </ThemedView>
   );
 };
 
-export default index;
+export default Home;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    display: 'flex',
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'red',
-  },
-  heading: {
-    color: 'white',
-    fontSize: 40,
-  },
-  card: {
-    height: 300,
-    backgroundColor: 'blue',
+    justifyContent: 'center',
     padding: 20,
   },
-  cardHeading: {
-    color: 'white',
+  title: {
+    fontWeight: 'bold',
+    fontSize: 24,
+    marginBottom: 10,
+  },
+  subtitle: {
+    fontSize: 16,
+    marginBottom: 30,
   },
   link: {
-    marginVertical: 30,
+    marginVertical: 10,
+    padding: 10,
     borderBottomWidth: 1,
   },
 });

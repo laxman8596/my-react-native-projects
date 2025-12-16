@@ -1,17 +1,23 @@
 import { Link } from 'expo-router';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, useColorScheme, View } from 'react-native';
+import ThemedView from '../components/ThemedView';
+import ThemedText from '../components/ThemedText';
 
 const About = () => {
+  const colorScheme = useColorScheme();
+  // console.log(colorScheme);
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>About page</Text>
-       <Link href="/contact" style={styles.link}>
-        Go To Contact page
+    <ThemedView style={styles.container}>
+      <ThemedText style={styles.heading} title={true}>
+        About page
+      </ThemedText>
+      <Link href="/contact" style={styles.link}>
+        <ThemedText>Go To Contact page</ThemedText>
       </Link>
       <Link href="/" style={styles.link}>
-        Back to Home page
+        <ThemedText>Back to Home page</ThemedText>
       </Link>
-    </View>
+    </ThemedView>
   );
 };
 
@@ -23,10 +29,10 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'blue',
+    // backgroundColor: 'white',
   },
   heading: {
-    color: 'white',
+    // color: 'white',
     fontSize: 40,
   },
   link: {
